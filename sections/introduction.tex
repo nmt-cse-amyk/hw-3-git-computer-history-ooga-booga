@@ -1,0 +1,22 @@
+\providecommand{\main}{..}  
+% *Modification: redefine path location, must go before \documentclass
+\documentclass[../computer-history.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\begin{figure}[bh]
+\centering
+\includegraphics[width=3cm]{overleaf-logo}
+
+\label{fig:img1}
+\caption{Overleaf logo}
+\end{figure}
+
+This provides an example of BibTeX and bibliography management using subfiles. Three items are cited: \textit{The \LaTeX\ Companion} book \cite{latexcompanion}, the Einstein journal paper \cite{einstein}, and the Donald Knuth's website \cite{knuthwebsite}. The \LaTeX\ related items are \cite{latexcompanion,knuthwebsite}.
+
+%********************************************************************************
+%      Bibliography
+%********************************************************************************
+\bibliographystyle{unsrt}
+\bibliography{../sources}
+\end{document}

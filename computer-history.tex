@@ -1,0 +1,110 @@
+%********************************************************************************
+%       Preamble Information
+%********************************************************************************
+\documentclass[11pt, twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black
+    }
+% Used to include graphic images into LaTeX
+\usepackage{graphicx}
+% Tells the compiler to search in the images/ 
+% folder for any included figures
+\graphicspath{ {./images/} }
+
+% Make lists more compact
+% (from pandoc template)
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Prevent overfull lines
+\setlength{\emergencystretch}{1em}
+
+% No indentation and space between paragraph
+\setlength{\parindent}{0.0in}
+%\setlength{\parskip}{0.04in}
+% Have space between paragraph
+\setlength{\parskip}{11pt}
+
+% Margin support
+\usepackage[margin=0.75in]{geometry}
+
+% header and footer
+\usepackage{fancyhdr}
+
+\newcommand{\thelabnumber}{HW3}
+\newcommand{\thetitle}{HW3: Git Computer History}
+% Update this line with your name 
+\newcommand{\theauthor}{Member 1 \\ Member 2 \\ Member 3}
+
+% Write title and author
+%\title{{\large } \thetitle}
+%\author{\theauthor}
+%\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{HW3}
+\fancyfoot[L]{CSE/IT 101 HW3}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{firstpage}{%
+  \fancyhf{}% clear default for header and footer
+  \fancyfoot[R]{\thepage}
+  \fancyfoot[C]{HW3}
+  \fancyfoot[L]{CSE/IT 101}
+  \renewcommand{\footrulewidth}{1pt}
+    \renewcommand{\headrulewidth}{0pt}
+}
+\usepackage{natbib}
+\providecommand{\main}{.}  % *Modification: define file location
+\def\biblio{\bibliographystyle{unsrt}\bibliography{\main/sources}}  
+% *Modification: added `\main/` to specify relative file location.
+
+\usepackage{blindtext}
+\usepackage{subfiles} % Best loaded last in the preamble
+%********************************************************************************
+%       Begin Document
+%********************************************************************************
+% Write title and author
+\title{\LARGE \bf \thetitle \\
+\large Group Topic Expressed In A Few Words}
+\author{\theauthor}
+\date{\today}
+
+\begin{document}
+\def\biblio{}
+\maketitle
+
+\section{Introduction}
+\subfile{sections/introduction}
+
+\section{Time Period}
+\subfile{sections/time-period}
+
+\section{Computer Hardware}
+\subfile{sections/hardware}
+
+\section{Computer Software}
+\subfile{sections/software}
+
+\section{Conclusion}
+\subfile{sections/conclusion}
+
+%********************************************************************************
+%      Bibliography
+%********************************************************************************
+\bibliographystyle{unsrt}
+\bibliography{sources}
+
+\end{document}
